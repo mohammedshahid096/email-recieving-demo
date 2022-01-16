@@ -27,7 +27,7 @@
                     <br>
                     Message   : <textarea name="message" id="" cols="40" rows="15"></textarea>
                     <br>
-                                 <input type="submit" value="Send">   <input type="reset" value="clear">
+                                 <input type="submit" name=submit" value="Send">   <input type="reset" value="clear">
                     
                 </pre>
                 
@@ -38,6 +38,8 @@
     </head>
 
     <?php 
+    if(isset($_POST["submit"]))
+    {
     $to = $_POST["emailname"];
     $subject = $_POST["subject"];
     $message = $_POST["message"];
@@ -50,5 +52,7 @@
      }
      else{
          echo "failed to send";
+     }
+
      }
     ?>
